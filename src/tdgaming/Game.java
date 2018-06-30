@@ -29,6 +29,7 @@ public class Game extends Canvas implements Runnable   {
 
 /// GAME OBJECTS //////////////////////////////////////////
 
+    private Textures textures;
     private Apple apple;
     private Player player;
     private ArrayList<GameObject> gameObjects;
@@ -59,8 +60,9 @@ public class Game extends Canvas implements Runnable   {
 
         addKeyListener(new KeyInput(this));
 
-        apple = new Apple(100,100, this);
-        player = new Player(100,100, this);
+        textures = new Textures(this);
+        apple = new Apple(100,100, this, textures);
+        player = new Player(100,100, this, textures);
         gameObjects = new ArrayList<>();
         gameObjects.add(apple);
         gameObjects.add(player);

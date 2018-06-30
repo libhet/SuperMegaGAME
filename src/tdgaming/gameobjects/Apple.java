@@ -2,6 +2,7 @@ package tdgaming.gameobjects;
 
 import tdgaming.Game;
 import tdgaming.SpriteSheet;
+import tdgaming.Textures;
 
 import java.awt.*;
 import java.awt.event.KeyEvent;
@@ -27,13 +28,14 @@ public class Apple extends GameObject {
 
     private BufferedImage apple;
 
-    public Apple(double x, double y, Game game) {
+    public Apple(double x, double y, Game game, Textures textures) {
         this.x = x;
         this.y = y;
+        this.textures = textures;
 
-        SpriteSheet ss = new SpriteSheet(game.getSpriteSheet());
+//        SpriteSheet ss = new SpriteSheet(game.getSpriteSheet());
 
-        apple = ss.grabImage(1,1,32,32);
+//        apple = ss.grabImage(1,1,32,32);
     }
 
 
@@ -45,7 +47,7 @@ public class Apple extends GameObject {
 
     @Override
     public void render(Graphics g) {
-        g.drawImage(apple,(int)x,(int)y,null);
+        g.drawImage(textures.apple,(int)x,(int)y,null);
     }
 
 //    public void keyPressed(KeyEvent e) {

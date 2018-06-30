@@ -1,10 +1,13 @@
 package tdgaming.gameobjects;
 
+import tdgaming.Textures;
+
 import java.awt.*;
 
 public abstract class GameObject {
     protected double x, y;
     protected double velX = 0, velY = 0;
+    protected Textures textures;
 
     abstract public void render(Graphics g);
     abstract public void tick();
