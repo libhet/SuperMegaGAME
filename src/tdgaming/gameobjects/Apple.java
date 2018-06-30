@@ -15,15 +15,15 @@ public class Apple extends GameObject {
     public double getY() {
         return y;
     }
-    public void setX(double x) {
-        this.x = x;
-    }
-    public void setY(double y) {
-        this.y = y;
-    }
+//    public void setX(double x) {
+//        this.x = x;
+//    }
+//    public void setY(double y) {
+//        this.y = y;
+//    }
 
-    private double x;
-    private double y;
+//    private double x;
+//    private double y;
 
     private BufferedImage apple;
 
@@ -37,30 +37,33 @@ public class Apple extends GameObject {
     }
 
 
+    @Override
     public void tick() {
 //        this.x = this.x + 1.0;
+//
     }
 
+    @Override
     public void render(Graphics g) {
         g.drawImage(apple,(int)x,(int)y,null);
     }
 
-    public void keyPressed(KeyEvent e) {
-        int key = e.getKeyCode();
-
-        if(key == KeyEvent.VK_RIGHT) {
-            x++;
-        } else if(key == KeyEvent.VK_LEFT) {
-            x--;
-        } else if(key == KeyEvent.VK_UP) {
-            y--;
-        } else if(key == KeyEvent.VK_DOWN) {
-            y++;
-        }
-    }
-
-    public void keyReleased(KeyEvent e) {
-
-
-    }
+//    public void keyPressed(KeyEvent e) {
+//        int key = e.getKeyCode();
+//
+//        if(key == KeyEvent.VK_RIGHT) {
+//            x++;
+//        } else if(key == KeyEvent.VK_LEFT) {
+//            x--;
+//        } else if(key == KeyEvent.VK_UP) {
+//            y--;
+//        } else if(key == KeyEvent.VK_DOWN) {
+//            y++;
+//        }
+//    }
+//
+//    public void keyReleased(KeyEvent e) {
+//
+//
+//    }
 }

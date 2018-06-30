@@ -3,6 +3,7 @@ package tdgaming;
 
 import tdgaming.gameobjects.Apple;
 import tdgaming.gameobjects.GameObject;
+import tdgaming.gameobjects.Player;
 
 import javax.swing.*;
 import java.awt.*;
@@ -29,6 +30,7 @@ public class Game extends Canvas implements Runnable   {
 /// GAME OBJECTS //////////////////////////////////////////
 
     private Apple apple;
+    private Player player;
     private ArrayList<GameObject> gameObjects;
 
 /// GETTERS ///////////////////////////////////////////////
@@ -58,8 +60,10 @@ public class Game extends Canvas implements Runnable   {
         addKeyListener(new KeyInput(this));
 
         apple = new Apple(100,100, this);
+        player = new Player(100,100, this);
         gameObjects = new ArrayList<>();
         gameObjects.add(apple);
+        gameObjects.add(player);
 
 //////////////////////////////////////////////////////////
     }
@@ -167,18 +171,28 @@ public class Game extends Canvas implements Runnable   {
         int key = e.getKeyCode();
 
         if(key == KeyEvent.VK_RIGHT) {
-            apple.setX(apple.getX() + 5);
+            player.setVelX(5);
         } else if(key == KeyEvent.VK_LEFT) {
-            apple.setX(apple.getX() - 5);
+            player.setVelX(- 5);
         } else if(key == KeyEvent.VK_UP) {
-            apple.setY(apple.getY() - 5);
+            player.setVelY(-5);
         } else if(key == KeyEvent.VK_DOWN) {
-            apple.setY(apple.getY() + 5);;
+            player.setVelY(5);
         }
     }
 
     public void keyReleased(KeyEvent e) {
+        int key = e.getKeyCode();
 
+        if(key == KeyEvent.VK_RIGHT) {
+            player.setVelX(0);
+        } else if(key == KeyEvent.VK_LEFT) {
+            player.setVelX(0);
+        } else if(key == KeyEvent.VK_UP) {
+            player.setVelY(0);
+        } else if(key == KeyEvent.VK_DOWN) {
+            player.setVelY(0);
+        }
 
     }
 
