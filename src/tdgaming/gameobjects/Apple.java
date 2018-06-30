@@ -1,12 +1,13 @@
-package tdgaming;
+package tdgaming.gameobjects;
 
-import javax.swing.text.GapContent;
+import tdgaming.Game;
+import tdgaming.SpriteSheet;
+
 import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.awt.image.BufferedImage;
-import java.lang.management.PlatformLoggingMXBean;
 
-public class Apple {
+public class Apple extends GameObject {
 
     public double getX() {
         return x;

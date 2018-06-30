@@ -1,19 +1,23 @@
 package tdgaming;
 
 
+import tdgaming.gameobjects.Apple;
+import tdgaming.gameobjects.GameObject;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.awt.image.BufferStrategy;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class Game extends Canvas implements Runnable   {
 
-    public static final int WIDTH = 320;
-    public static final int HEIGHT = 320;
-    public static final int SCALE = 2;
-    public final String TITLE = "Snake!";
+    private static final int WIDTH = 320;
+    private static final int HEIGHT = 320;
+    private static final int SCALE = 2;
+    private final String TITLE = "Snake!";
 
     private boolean running = false;
     private Thread thread;
@@ -25,6 +29,7 @@ public class Game extends Canvas implements Runnable   {
 /// GAME OBJECTS //////////////////////////////////////////
 
     private Apple apple;
+    private ArrayList<GameObject> gameObjects;
 
 /// GETTERS ///////////////////////////////////////////////
 
@@ -39,6 +44,7 @@ public class Game extends Canvas implements Runnable   {
 /// INITIALIZATION ////////////////////////////////////////
 
     public void init() {
+        requestFocus();
         BufferedImageLoader loader = new BufferedImageLoader();
         try{
 
@@ -52,6 +58,8 @@ public class Game extends Canvas implements Runnable   {
         addKeyListener(new KeyInput(this));
 
         apple = new Apple(100,100, this);
+        gameObjects = new ArrayList<>();
+        gameObjects.add(apple);
 
 //////////////////////////////////////////////////////////
     }
@@ -124,7 +132,8 @@ public class Game extends Canvas implements Runnable   {
 ////////////////////////////////////////////////////////
     private void tick(){
 
-        apple.tick();
+        for (GameObject go : gameObjects)
+            go.tick();
 
     }
 
@@ -144,7 +153,9 @@ public class Game extends Canvas implements Runnable   {
 
 /// RENDER /////////////////////////////////////////////
 
-        apple.render(g);
+        //apple.render(g);
+        for (GameObject o : gameObjects)
+            o.render(g);
 
 ////////////////////////////////////////////////////////
         g.dispose();
