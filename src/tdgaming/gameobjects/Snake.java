@@ -57,4 +57,8 @@ public class Snake extends GameObject {
     public SnakeHead getSnakeHead() {
         return snakeHead;
     }
+
+    public void grow(){
+        //
+    }
 }
