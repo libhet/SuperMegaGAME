@@ -7,7 +7,6 @@ import java.awt.*;
 
 public class SnakeHead extends GameObject {
 
-    private Textures textures;
     private Game game;
 
     public SnakeHead(double x, double y, Game game, Textures textures) {

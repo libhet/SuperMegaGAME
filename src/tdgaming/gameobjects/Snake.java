@@ -10,8 +10,8 @@ import java.util.ArrayList;
 public class Snake extends GameObject {
 
     private Game game;
-    ArrayList<GameObject> snakeElements;
-    SnakeHead snakeHead;
+    private ArrayList<GameObject> snakeElements;
+    private SnakeHead snakeHead;
 
     public Snake(double x, double y, Game game, Textures textures) {
         this.x = x;
@@ -22,6 +22,9 @@ public class Snake extends GameObject {
         snakeHead = new SnakeHead(x, y, game, textures);
         snakeElements = new ArrayList<>();
         snakeElements.add(snakeHead);
+        SnakeBodyElement bodyElement = new SnakeBodyElement(snakeHead, x, y + 32, textures);
+        snakeElements.add(bodyElement);
+        snakeElements.add(new SnakeTail(bodyElement, x, y + 64, textures));
     }
 
     @Override

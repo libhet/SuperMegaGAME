@@ -6,6 +6,7 @@ public class Textures {
 
     public BufferedImage snakeHead, snakeBody, snakeTail, apple;
     private SpriteSheet spriteSheet;
+    private int width = 32, height = 32;
 
     public Textures(Game game) {
         spriteSheet = new SpriteSheet(game.getSpriteSheet());
@@ -14,9 +15,17 @@ public class Textures {
     }
 
     private void getTextures() {
-        snakeHead = spriteSheet.grabImage(1,2,32,32);
-        snakeBody = spriteSheet.grabImage(1,3,32,32);
-        snakeTail = spriteSheet.grabImage(1,4,32,32);
-        apple = spriteSheet.grabImage(1,1,32,32);
+        snakeHead = spriteSheet.grabImage(1,2,width, height);
+        snakeBody = spriteSheet.grabImage(1,3,width, height);
+        snakeTail = spriteSheet.grabImage(1,4,width, height);
+        apple = spriteSheet.grabImage(1,1,width, height);
+    }
+
+    public int getTexturesWidth() {
+        return width;
+    }
+
+    public int getTexturesHeight() {
+        return height;
     }
 }
