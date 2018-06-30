@@ -4,13 +4,13 @@ import tdgaming.Game;
 import tdgaming.Textures;
 
 import java.awt.*;
-import java.awt.image.BufferedImage;
 
-public class Player extends GameObject {
+public class SnakeHead extends GameObject {
 
+    private Textures textures;
     private Game game;
 
-    public Player(double x, double y, Game game, Textures textures) {
+    public SnakeHead(double x, double y, Game game, Textures textures) {
         this.x = x;
         this.y = y;
         this.game = game;
@@ -19,7 +19,7 @@ public class Player extends GameObject {
 
     @Override
     public void render(Graphics g) {
-        g.drawImage(textures.player,(int)x,(int)y,null);
+        g.drawImage(textures.snakeHead,(int)x,(int)y,null);
     }
 
     @Override
@@ -36,7 +36,6 @@ public class Player extends GameObject {
         if (y > game.getHeight())
             y = 0;
     }
-
 
 
 }

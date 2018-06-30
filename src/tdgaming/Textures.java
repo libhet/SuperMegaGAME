@@ -4,7 +4,7 @@ import java.awt.image.BufferedImage;
 
 public class Textures {
 
-    public BufferedImage player, apple;
+    public BufferedImage snakeHead, snakeBody, snakeTail, apple;
     private SpriteSheet spriteSheet;
 
     public Textures(Game game) {
@@ -14,7 +14,9 @@ public class Textures {
     }
 
     private void getTextures() {
-        player = spriteSheet.grabImage(1,1,32,32);
+        snakeHead = spriteSheet.grabImage(1,2,32,32);
+        snakeBody = spriteSheet.grabImage(1,3,32,32);
+        snakeTail = spriteSheet.grabImage(1,4,32,32);
         apple = spriteSheet.grabImage(1,1,32,32);
     }
 }

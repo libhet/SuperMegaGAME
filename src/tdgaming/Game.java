@@ -3,7 +3,7 @@ package tdgaming;
 
 import tdgaming.gameobjects.Apple;
 import tdgaming.gameobjects.GameObject;
-import tdgaming.gameobjects.Player;
+import tdgaming.gameobjects.Snake;
 
 import javax.swing.*;
 import java.awt.*;
@@ -31,7 +31,7 @@ public class Game extends Canvas implements Runnable   {
 
     private Textures textures;
     private Apple apple;
-    private Player player;
+    private Snake snake;
     private ArrayList<GameObject> gameObjects;
 
 /// GETTERS ///////////////////////////////////////////////
@@ -62,10 +62,10 @@ public class Game extends Canvas implements Runnable   {
 
         textures = new Textures(this);
         apple = new Apple(100,100, this, textures);
-        player = new Player(100,100, this, textures);
+        snake = new Snake(100,100, this, textures);
         gameObjects = new ArrayList<>();
         gameObjects.add(apple);
-        gameObjects.add(player);
+        gameObjects.add(snake);
 
 //////////////////////////////////////////////////////////
     }
@@ -173,13 +173,17 @@ public class Game extends Canvas implements Runnable   {
         int key = e.getKeyCode();
 
         if(key == KeyEvent.VK_RIGHT) {
-            player.setVelX(5);
+            //snake.setVelX(5);
+            snake.getSnakeHead().setVelX(5);
         } else if(key == KeyEvent.VK_LEFT) {
-            player.setVelX(- 5);
+            //snake.setVelX(- 5);
+            snake.getSnakeHead().setVelX(- 5);
         } else if(key == KeyEvent.VK_UP) {
-            player.setVelY(-5);
+//            snake.setVelY(-5);
+            snake.getSnakeHead().setVelY(-5);
         } else if(key == KeyEvent.VK_DOWN) {
-            player.setVelY(5);
+//            snake.setVelY(5);
+            snake.getSnakeHead().setVelY(5);
         }
     }
 
@@ -187,13 +191,13 @@ public class Game extends Canvas implements Runnable   {
         int key = e.getKeyCode();
 
         if(key == KeyEvent.VK_RIGHT) {
-            player.setVelX(0);
+            snake.getSnakeHead().setVelX(0);
         } else if(key == KeyEvent.VK_LEFT) {
-            player.setVelX(0);
+            snake.getSnakeHead().setVelX(0);
         } else if(key == KeyEvent.VK_UP) {
-            player.setVelY(0);
+            snake.getSnakeHead().setVelY(0);
         } else if(key == KeyEvent.VK_DOWN) {
-            player.setVelY(0);
+            snake.getSnakeHead().setVelY(0);
         }
 
     }
