@@ -1,12 +1,9 @@
 package tdgaming.gameobjects;
 
 import tdgaming.Game;
-import tdgaming.SpriteSheet;
 import tdgaming.Textures;
 
 import java.awt.*;
-import java.awt.event.KeyEvent;
-import java.awt.image.BufferedImage;
 
 public class Apple extends GameObject {
 
@@ -16,26 +13,13 @@ public class Apple extends GameObject {
     public double getY() {
         return y;
     }
-//    public void setX(double x) {
-//        this.x = x;
-//    }
-//    public void setY(double y) {
-//        this.y = y;
-//    }
 
-//    private double x;
-//    private double y;
-
-    private BufferedImage apple;
 
     public Apple(double x, double y, Game game, Textures textures) {
         this.x = x;
         this.y = y;
         this.textures = textures;
 
-//        SpriteSheet ss = new SpriteSheet(game.getSpriteSheet());
-
-//        apple = ss.grabImage(1,1,32,32);
     }
 
 

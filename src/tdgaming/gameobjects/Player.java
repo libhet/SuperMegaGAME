@@ -1,16 +1,13 @@
 package tdgaming.gameobjects;
 
 import tdgaming.Game;
-import tdgaming.SpriteSheet;
 import tdgaming.Textures;
 
 import java.awt.*;
-import java.awt.event.KeyEvent;
 import java.awt.image.BufferedImage;
 
 public class Player extends GameObject {
 
-    private BufferedImage player;
     private Game game;
 
     public Player(double x, double y, Game game, Textures textures) {
@@ -18,10 +15,6 @@ public class Player extends GameObject {
         this.y = y;
         this.game = game;
         this.textures = textures;
-
-//        SpriteSheet ss = new SpriteSheet(game.getSpriteSheet());
-
-//        player = ss.grabImage(1,1,32,32);
     }
 
     @Override
